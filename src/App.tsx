@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import './App.scss';
 import axios from 'axios';
 import {User} from './interfaces/user';
-import {UserComponent} from './components/User';
+import {UserComponent} from './components/UserComponent';
 
 const App: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);
@@ -20,9 +19,7 @@ const App: React.FC = () => {
         <div className="app">
             <h1 className="app__header">Users</h1>
             <div className="app_users">
-                {/*TODO: move to a component*/}
-                {users.map((user: User, id) => <p>Greetings, {user.name}</p>)}
-                {/*{users.map((user: User, id) => <UserComponent user={user}/>)}*/}
+                {users.map((user: User, id) => <UserComponent user={user}/>)}
             </div>
         </div>
     );
