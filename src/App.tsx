@@ -22,7 +22,7 @@ const App: React.FC = () => {
             <HeaderComponent/>
             <div className="app">
                 <div className="app_users">
-                    {users.map((user: User, id) => <UserComponent user={user}/>)}
+                    {users.map((user: User, id) => <UserComponent key={user.id} user={user}/>)}
                 </div>
             </div>
             <FooterComponent/>

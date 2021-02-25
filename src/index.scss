@@ -32,18 +32,19 @@
 }
 
 .user {
-  color: $c-red;
-}
-
-.footer {
-  height: $footer-height;
-  background: $footer-color;
+  //color: $c-red;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: center;
 
-  &__copyright {
-    text-align: center;
-    padding-bottom: 20px;
+  &__picture {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+  }
+
+  &__info-section,
+  &__title,
+  &__status {
+    display: flex;
   }
 }
