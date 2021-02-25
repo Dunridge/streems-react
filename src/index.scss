@@ -1,22 +1,15 @@
+@import "src/assets/styles/all";
 
 .app {
   width: 75%;
   margin: 0 auto;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
-
-  &__users {
-    //margin: 0 auto;
-    //width: 500px;
-  }
 }
 
 .header {
-  color: red;
-  font-size: 32px;
+  color: $c-red;
+  font-size: $font-size-32px;
 }
 
 .user {
-  color: red;
+  color: $c-red;
 }
