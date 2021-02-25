@@ -1,13 +1,21 @@
 
 .app {
-  margin: 0 auto;
   width: 75%;
+  margin: 0 auto;
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
 
-  &__title {
-    color: red;
+  &__users {
+    //margin: 0 auto;
+    //width: 500px;
   }
 }
 
+.header {
+  color: red;
+  font-size: 32px;
+}
 
 .user {
   color: red;

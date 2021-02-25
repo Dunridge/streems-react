@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {User} from './interfaces/user';
 import {UserComponent} from './components/UserComponent';
+import {HeaderComponent} from './components/HeaderComponent';
+import {FooterComponent} from './components/FooterComponent';
 
 const App: React.FC = () => {
     const [users, setUsers] = useState<User[]>([]);
@@ -16,12 +18,15 @@ const App: React.FC = () => {
     console.log(users);
 
     return (
-        <div className="app">
-            <h1 className="app__header">Users</h1>
-            <div className="app_users">
-                {users.map((user: User, id) => <UserComponent user={user}/>)}
+        <React.Fragment>
+            <HeaderComponent/>
+            <div className="app">
+                <div className="app_users">
+                    {users.map((user: User, id) => <UserComponent user={user}/>)}
+                </div>
             </div>
-        </div>
+            <FooterComponent/>
+        </React.Fragment>
     );
 }
 
