@@ -1,6 +1,7 @@
 import React from 'react';
 import {UserProps} from '../interfaces/user-props';
 import {UserSection} from '../interfaces/user-section';
+import {Link} from 'react-router-dom';
 
 export const UserComponent: React.FC<UserProps> = ({user}) => {
     console.log(user);
@@ -47,7 +48,7 @@ export const UserComponent: React.FC<UserProps> = ({user}) => {
 
     return (
         <div className="user">
-            <img className="user__picture" src={user?.image}/>
+            <img className="user__picture" src={user?.image} alt="user"/>
             <div className="user__info">
                 {sections.map(section => (
                     <div className="user__info-section">
@@ -55,6 +56,7 @@ export const UserComponent: React.FC<UserProps> = ({user}) => {
                         <div className="user__section-value">{section.name}</div>
                     </div>
                 ))}
+                <Link to={'/' + user?.id}>Click me</Link>
             </div>
         </div>
     );
