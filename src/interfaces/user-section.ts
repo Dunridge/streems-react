@@ -1,5 +1,5 @@
 
 export interface UserSection {
-    placeholder: string;
+    placeholder?: string;
     name?: string;
 }

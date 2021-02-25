@@ -3,7 +3,6 @@
 * {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 .app {
@@ -32,9 +31,13 @@
 }
 
 .user {
-  //color: $c-red;
   display: flex;
+  justify-content: space-around;
+  width: 100%;
   align-items: center;
+  background-color: $user-color;
+  border-radius: 20px;
+  padding: 20px 40px;
 
   &__picture {
     height: 200px;
@@ -42,9 +45,26 @@
     border-radius: 50%;
   }
 
-  &__info-section,
-  &__title,
-  &__status {
+  &__info {
+    width: $description-width;
+  }
+
+  &__info-section {
     display: flex;
+  }
+
+  margin: $user-card-margin 0;
+}
+
+.footer {
+  height: $footer-height;
+  background: $footer-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__copyright {
+    text-align: center;
+    padding-bottom: 20px;
   }
 }

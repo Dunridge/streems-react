@@ -5,14 +5,43 @@ import {UserSection} from '../interfaces/user-section';
 export const UserComponent: React.FC<UserProps> = ({user}) => {
     console.log(user);
 
+    // TODO: configure these
     const sections: UserSection[] = [
         {
-            placeholder: 'Name',
+            placeholder: 'Name:',
             name: user?.name
         },
         {
-            placeholder: 'Status',
+            placeholder: 'Status:',
             name: user?.status
+        },
+        {
+            placeholder: 'Species:',
+            name: user?.species
+        },
+        {
+            placeholder: 'Type: ',
+            name: user?.type ? user?.type : 'Not specified'
+        },
+        {
+            placeholder: user?.origin.name,
+            name: user?.origin.url
+        },
+        {
+            placeholder: 'Created at: ',
+            name: user?.created
+        },
+        {
+            placeholder: 'Gender: ',
+            name: user?.gender
+        },
+        {
+            placeholder: user?.location.name,
+            name: user?.location.url
+        },
+        {
+            placeholder: 'Url: ',
+            name: user?.url
         }
     ];
 
