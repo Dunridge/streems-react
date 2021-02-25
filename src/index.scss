@@ -1,15 +1,49 @@
 @import "src/assets/styles/all";
 
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
 .app {
-  width: 75%;
-  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  background: $body-color; // TODO: set the background color for the users
+
+  &__users {
+    width: 75%;
+    margin: 0 auto;
+  }
 }
 
 .header {
-  color: $c-red;
+  height: $header-height;
+  color: $c-gold;
+  background: $header-color;
   font-size: $font-size-32px;
+  display: grid;
+  place-items: center;
+
+  &__title {
+    margin: 0 auto;
+    cursor: pointer;
+  }
 }
 
 .user {
   color: $c-red;
+}
+
+.footer {
+  height: $footer-height;
+  background: $footer-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  &__copyright {
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }
