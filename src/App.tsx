@@ -9,18 +9,18 @@ const App: React.FC = () => {
 
     return (
         <React.Fragment>
-            <HeaderComponent/>
-            <div className="app">
-                <div className="app_users">
-                    <Router>
+            <Router>
+                <HeaderComponent/>
+                <div className="app">
+                    <div className="app_users">
                         <Switch>
                             <Route exact path="/" component={UsersComponent}/>
                             <Route path='/:id' component={UserDetailsComponent}/>
                         </Switch>
-                    </Router>
+                    </div>
                 </div>
-            </div>
-            <FooterComponent/>
+                <FooterComponent/>
+            </Router>
         </React.Fragment>
     );
 }

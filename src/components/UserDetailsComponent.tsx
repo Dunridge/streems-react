@@ -6,21 +6,16 @@ import {UserComponent} from './UserComponent';
 
 export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
     const [users, setUsers] = useState<User[]>([]);
-
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
             .then(response => {
                 setUsers(response.data.results);
             });
     }, []);
-
     console.log(users);
-    // console.log(users.find(user => user.id.toString() === props.match.params.id));
-
     const user = users.find(user => user.id.toString() === props.match.params.id);
     console.log(user);
-
-    console.log(props.match.params.id);
+    // TODO: pass a boolean that will hide the Click me button + style it
     return (
         <React.Fragment>
             <UserComponent user={user}/>
