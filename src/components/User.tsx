@@ -4,7 +4,7 @@ import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
 export const User: React.FC<IUserProps> = ({user}) => {
-    console.log(user);
+    // console.log(user);
 
     // TODO: configure these
     const sections: IUserSection[] = [

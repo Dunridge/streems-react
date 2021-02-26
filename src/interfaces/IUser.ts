@@ -1,6 +1,6 @@
 import {IOrigin} from './IOrigin';
 import {ILocation} from './ILocation';
-import {IEpisode} from './IEpisode';
+import {IEpisodeURL} from './IEpisodeURL';
 
 export interface IUser {
     id: number;

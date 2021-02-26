@@ -16,7 +16,7 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
     }, []);
     const user = users.find(user => user.id.toString() === props.match.params.id);
     const userEpisodes: string[] | undefined = user?.episode;
-    console.log(userEpisodes);
+    // console.log(userEpisodes);
 
     // TODO: pass a boolean that will hide the Click me button + style it
     return (
