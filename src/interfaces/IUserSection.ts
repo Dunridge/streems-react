@@ -1,5 +1,5 @@
 
-export interface UserSection {
+export interface IUserSection {
     placeholder?: string;
     name?: string;
 }

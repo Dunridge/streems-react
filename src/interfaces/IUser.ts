@@ -1,18 +1,18 @@
-import {Origin} from './origin';
-import {Location} from './location';
-import {EpisodeInterface} from './episode';
+import {IOrigin} from './IOrigin';
+import {ILocation} from './ILocation';
+import {IEpisode} from './IEpisode';
 
-export interface User {
+export interface IUser {
     id: number;
     name: string;
     status: string;
     species: string;
     type: string
-    origin: Origin;
+    origin: IOrigin;
     created: string;
     episode: string[] | undefined;
     gender: string;
     image: string;
-    location: Location;
+    location: ILocation;
     url: string;
 }

@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
 import {RouteComponentProps} from 'react-router-dom';
-import {User} from '../interfaces/user';
+import {IUser} from '../interfaces/IUser';
 import axios from 'axios';
 import {UserComponent} from './UserComponent';
 import {LocationComponent} from './LocationComponent';
-import {EpisodeInterface} from '../interfaces/episode';
-import {EpisodeComponent} from './EpisodeComponent';
+import {IEpisode} from '../interfaces/IEpisode';
+import {Episode} from '../components/Episode';
 
 export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
-    const [users, setUsers] = useState<User[]>([]);
+    const [users, setUsers] = useState<IUser[]>([]);
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
             .then(response => {
@@ -26,7 +26,7 @@ export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDeta
             <div className="details__locations">Locations</div>
             <LocationComponent location={user?.location}/>
             <div className="details__episodes">Episodes</div>
-            {userEpisodes?.map((episode) => <EpisodeComponent episode={user?.episode}/>)}
+            {userEpisodes?.map((episode) => <Episode episode={user?.episode}/>)}
         </div>
     );
 }

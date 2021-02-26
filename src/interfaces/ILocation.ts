@@ -1,5 +1,5 @@
 
-export interface Location {
+export interface ILocation {
     name: string;
     url: string;
 }

@@ -1,13 +1,13 @@
 import React from 'react';
-import {UserProps} from '../interfaces/user-props';
-import {UserSection} from '../interfaces/user-section';
+import {IUserProps} from '../interfaces/IUserProps';
+import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
-export const UserComponent: React.FC<UserProps> = ({user}) => {
+export const UserComponent: React.FC<IUserProps> = ({user}) => {
     console.log(user);
 
     // TODO: configure these
-    const sections: UserSection[] = [
+    const sections: IUserSection[] = [
         {
             placeholder: 'Name:',
             name: user?.name

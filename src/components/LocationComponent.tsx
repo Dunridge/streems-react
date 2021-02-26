@@ -1,7 +1,7 @@
 import React from 'react';
-import {Location} from '../interfaces/location';
+import {ILocationProps} from '../interfaces/ILocationProps';
 
-export const LocationComponent: React.FC<LocationProps> = ({ location}) => {
+export const LocationComponent: React.FC<ILocationProps> = ({ location}) => {
 
     return (
         <div className="location">
@@ -9,8 +9,4 @@ export const LocationComponent: React.FC<LocationProps> = ({ location}) => {
             <div className="location__url">{location?.url}</div>
         </div>
     );
-}
-
-export interface LocationProps {
-    location: Location | undefined;
 }

@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {User} from '../interfaces/user';
+import {IUser} from '../interfaces/IUser';
 import {UserComponent} from './UserComponent';
 import axios from 'axios';
 
 interface UsersProps {
-    users: User[];
+    users: IUser[];
 }
 
 export const UsersComponent: React.FC<UsersProps> = () => {
-    const [users, setUsers] = useState<User[]>([]);
+    const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
@@ -21,7 +21,7 @@ export const UsersComponent: React.FC<UsersProps> = () => {
 
     return (
         <div>
-            {users.map((user: User) => <UserComponent key={user.id} user={user}/>)}
+            {users.map((user: IUser) => <UserComponent key={user.id} user={user}/>)}
         </div>
     );
 }
