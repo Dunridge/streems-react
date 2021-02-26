@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {RouteComponentProps} from 'react-router-dom';
 import {IUser} from '../interfaces/IUser';
 import axios from 'axios';
 import {User} from '../components/User';
 import {Location} from '../components/Location';
 import {Episode} from '../components/Episode';
+import {IUserDetailsProps} from '../interfaces/IUserDetailsProps';
 
-export const UserDetails: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
+export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProps) => {
     const [users, setUsers] = useState<IUser[]>([]);
     useEffect(() => {
-        axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
+        axios.get('https://rickandmortyapi.com/api/character')
             .then(response => {
                 setUsers(response.data.results);
             });
@@ -25,11 +25,7 @@ export const UserDetails: React.FC<UserDetailsProps> = (props: UserDetailsProps)
             <div className="details__locations">Locations</div>
             <Location location={user?.location}/>
             <div className="details__episodes">Episodes</div>
-            {userEpisodes?.map((episode) => <Episode episode={user?.episode}/>)}
+            {userEpisodes?.map((episode) => <Episode episode={episode}/>)}
         </div>
     );
-}
-
-interface UserDetailsProps extends RouteComponentProps<{ id: string }> {
-
 }

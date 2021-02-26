@@ -11,7 +11,7 @@ export const Users: React.FC<UsersProps> = () => {
     const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
-        axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
+        axios.get('https://rickandmortyapi.com/api/character')
             .then(response => {
                 setUsers(response.data.results);
             });
