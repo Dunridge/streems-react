@@ -3,6 +3,9 @@ import {RouteComponentProps} from 'react-router-dom';
 import {User} from '../interfaces/user';
 import axios from 'axios';
 import {UserComponent} from './UserComponent';
+import {LocationComponent} from './LocationComponent';
+import {EpisodeInterface} from '../interfaces/episode';
+import {EpisodeComponent} from './EpisodeComponent';
 
 export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
     const [users, setUsers] = useState<User[]>([]);
@@ -12,14 +15,19 @@ export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDeta
                 setUsers(response.data.results);
             });
     }, []);
-    console.log(users);
     const user = users.find(user => user.id.toString() === props.match.params.id);
-    console.log(user);
+    const userEpisodes: string[] | undefined = user?.episode;
+    console.log(userEpisodes);
+
     // TODO: pass a boolean that will hide the Click me button + style it
     return (
-        <React.Fragment>
+        <div className="details">
             <UserComponent user={user}/>
-        </React.Fragment>
+            <div className="details__locations">Locations</div>
+            <LocationComponent location={user?.location}/>
+            <div className="details__episodes">Episodes</div>
+            {userEpisodes?.map((episode) => <EpisodeComponent episode={user?.episode}/>)}
+        </div>
     );
 }
 

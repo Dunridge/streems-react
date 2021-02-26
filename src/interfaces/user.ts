@@ -1,5 +1,6 @@
 import {Origin} from './origin';
 import {Location} from './location';
+import {EpisodeInterface} from './episode';
 
 export interface User {
     id: number;
@@ -9,7 +10,7 @@ export interface User {
     type: string
     origin: Origin;
     created: string;
-    episode: string[];
+    episode: string[] | undefined;
     gender: string;
     image: string;
     location: Location;

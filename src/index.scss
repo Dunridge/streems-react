@@ -73,3 +73,31 @@
     padding-bottom: 20px;
   }
 }
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__locations {
+    background-color: $user-color;
+    border-radius: 20px;
+    padding: 20px 40px;
+  }
+
+  &__episodes {
+    background-color: $user-color;
+    border-radius: 20px;
+    padding: 20px 40px;
+  }
+}
+
+.location {
+  background-color: $user-color;
+  border-radius: 20px;
+  padding: 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
