@@ -8,7 +8,12 @@
 .app {
   display: flex;
   justify-content: center;
-  background: $body-color; // TODO: set the background color for the users
+  background: $body-color;
+  background-image: url("../src/assets/images/bg_rick_and_morty.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &__users {
     width: 75%;

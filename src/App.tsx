@@ -3,6 +3,8 @@ import {HeaderComponent} from './components/HeaderComponent';
 import {FooterComponent} from './components/FooterComponent';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {UsersComponent} from './components/UsersComponent';
+// TODO: fix this type error
+//@ts-ignore
 import {UserDetailsComponent} from './components/UserDetailsComponent';
 
 const App: React.FC = () => {
