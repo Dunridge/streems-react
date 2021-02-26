@@ -1,27 +1,27 @@
 import React from 'react';
-import {HeaderComponent} from './components/HeaderComponent';
-import {FooterComponent} from './components/FooterComponent';
+import {Header} from './components/Header';
+import {Footer} from './components/Footer';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import {UsersComponent} from './components/UsersComponent';
+import {Users} from './components/Users';
 // TODO: fix this type error
 //@ts-ignore
-import {UserDetailsComponent} from './components/UserDetailsComponent';
+import {UserDetails} from './components/UserDetails';
 
 const App: React.FC = () => {
 
     return (
         <React.Fragment>
             <Router>
-                <HeaderComponent/>
+                <Header/>
                 <div className="app">
                     <div className="app_users">
                         <Switch>
-                            <Route exact path="/" component={UsersComponent}/>
-                            <Route path='/:id' component={UserDetailsComponent}/>
+                            <Route exact path="/" component={Users}/>
+                            <Route path='/:id' component={UserDetails}/>
                         </Switch>
                     </div>
                 </div>
-                <FooterComponent/>
+                <Footer/>
             </Router>
         </React.Fragment>
     );

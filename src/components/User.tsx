@@ -3,7 +3,7 @@ import {IUserProps} from '../interfaces/IUserProps';
 import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
-export const UserComponent: React.FC<IUserProps> = ({user}) => {
+export const User: React.FC<IUserProps> = ({user}) => {
     console.log(user);
 
     // TODO: configure these

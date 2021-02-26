@@ -2,12 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {RouteComponentProps} from 'react-router-dom';
 import {IUser} from '../interfaces/IUser';
 import axios from 'axios';
-import {UserComponent} from './UserComponent';
-import {LocationComponent} from './LocationComponent';
-import {IEpisode} from '../interfaces/IEpisode';
+import {User} from '../components/User';
+import {Location} from '../components/Location';
 import {Episode} from '../components/Episode';
 
-export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
+export const UserDetails: React.FC<UserDetailsProps> = (props: UserDetailsProps) => {
     const [users, setUsers] = useState<IUser[]>([]);
     useEffect(() => {
         axios.get('https://rickandmortyapi.com/api/character') // you might have to put this into a useEffect
@@ -22,9 +21,9 @@ export const UserDetailsComponent: React.FC<UserDetailsProps> = (props: UserDeta
     // TODO: pass a boolean that will hide the Click me button + style it
     return (
         <div className="details">
-            <UserComponent user={user}/>
+            <User user={user}/>
             <div className="details__locations">Locations</div>
-            <LocationComponent location={user?.location}/>
+            <Location location={user?.location}/>
             <div className="details__episodes">Episodes</div>
             {userEpisodes?.map((episode) => <Episode episode={user?.episode}/>)}
         </div>

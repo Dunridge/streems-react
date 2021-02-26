@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {IUser} from '../interfaces/IUser';
-import {UserComponent} from './UserComponent';
+import {User} from './User';
 import axios from 'axios';
 
 interface UsersProps {
     users: IUser[];
 }
 
-export const UsersComponent: React.FC<UsersProps> = () => {
+export const Users: React.FC<UsersProps> = () => {
     const [users, setUsers] = useState<IUser[]>([]);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export const UsersComponent: React.FC<UsersProps> = () => {
 
     return (
         <div>
-            {users.map((user: IUser) => <UserComponent key={user.id} user={user}/>)}
+            {users.map((user: IUser) => <User key={user.id} user={user}/>)}
         </div>
     );
 }

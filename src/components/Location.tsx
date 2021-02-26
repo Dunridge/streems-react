@@ -1,7 +1,7 @@
 import React from 'react';
 import {ILocationProps} from '../interfaces/ILocationProps';
 
-export const LocationComponent: React.FC<ILocationProps> = ({ location}) => {
+export const Location: React.FC<ILocationProps> = ({ location}) => {
 
     return (
         <div className="location">
