@@ -5,6 +5,7 @@ import {User} from '../components/User';
 import {Location} from '../components/Location';
 import {Episode} from '../components/Episode';
 import {IUserDetailsProps} from '../interfaces/IUserDetailsProps';
+import {IEpisodeURL} from '../interfaces/IEpisodeURL';
 
 export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProps) => {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -15,7 +16,9 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
             });
     }, []);
     const user = users.find(user => user.id.toString() === props.match.params.id);
-    const userEpisodes: string[] | undefined = user?.episode;
+    const userEpisodes: IEpisodeURL[] | undefined = user?.episode?.map(url => {
+        return { text: url } as IEpisodeURL;
+    });
     // console.log(userEpisodes);
 
     // TODO: pass a boolean that will hide the Click me button + style it
