@@ -1,21 +1,21 @@
 import React from 'react';
-import {UserProps} from '../interfaces/user-props';
-import {UserSection} from '../interfaces/user-section';
+import {IUserProps} from '../interfaces/IUserProps';
+import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
-export const UserComponent: React.FC<UserProps> = ({user}) => {
-    console.log(user);
+export const User: React.FC<IUserProps> = ({user}) => {
+    // console.log(user);
 
     // TODO: configure these
-    const sections: UserSection[] = [
+    const sections: IUserSection[] = [
         {
             placeholder: 'Name:',
             name: user?.name
         },
-        {
-            placeholder: 'Status:',
-            name: user?.status
-        },
+        // {
+        //     placeholder: 'Status:',
+        //     name: user?.status
+        // },
         {
             placeholder: 'Species:',
             name: user?.species
@@ -24,10 +24,10 @@ export const UserComponent: React.FC<UserProps> = ({user}) => {
             placeholder: 'Type: ',
             name: user?.type ? user?.type : 'Not specified'
         },
-        {
-            placeholder: user?.origin.name,
-            name: user?.origin.url
-        },
+        // {
+        //     placeholder: user?.origin.name,
+        //     name: user?.origin.url
+        // },
         {
             placeholder: 'Created at: ',
             name: user?.created
@@ -37,8 +37,9 @@ export const UserComponent: React.FC<UserProps> = ({user}) => {
             name: user?.gender
         },
         {
-            placeholder: user?.location.name,
-            name: user?.location.url
+            placeholder: 'Location: ',
+            name: user?.location.name
+            // name: user?.location.url
         },
         {
             placeholder: 'Url: ',
@@ -56,7 +57,7 @@ export const UserComponent: React.FC<UserProps> = ({user}) => {
                         <div className="user__section-value">{section.name}</div>
                     </div>
                 ))}
-                <Link to={'/' + user?.id}>Click me</Link>
+                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
             </div>
         </div>
     );

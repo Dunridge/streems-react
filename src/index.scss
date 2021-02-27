@@ -8,7 +8,12 @@
 .app {
   display: flex;
   justify-content: center;
-  background: $body-color; // TODO: set the background color for the users
+  background: $body-color;
+  background-image: url("../src/assets/images/bg_rick_and_morty.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   &__users {
     width: 75%;
@@ -33,7 +38,8 @@
 .user {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 740px;
+  height: 260px;
   align-items: center;
   background-color: $user-color;
   border-radius: 20px;
@@ -47,10 +53,25 @@
 
   &__info {
     width: $description-width;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   &__info-section {
     display: flex;
+  }
+
+  &__button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+    text-decoration: none;
+    width: 100px;
+    display: flex;
+    justify-content: center;
   }
 
   margin: $user-card-margin 0;
@@ -66,5 +87,50 @@
   &__copyright {
     text-align: center;
     padding-bottom: 20px;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__locations {
+    background-color: $user-color;
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin: 20px 0;
+  }
+
+  &__episodes {
+    background-color: $user-color;
+    border-radius: 20px;
+    padding: 20px 40px;
+    margin: 20px 0;
+  }
+}
+
+.location {
+  background-color: $user-color;
+  border-radius: 20px;
+  padding: 20px 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.episode {
+  background-color: $user-color;
+  border-radius: 20px;
+  padding: 20px 40px;
+  margin-top: 20px;
+
+  &:last-child {
+    margin-bottom: 30px;
+  }
+
+  &__info-section {
+    display: flex;
   }
 }

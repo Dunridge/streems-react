@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-export const HeaderComponent: React.FC = () => {
+export const Header: React.FC = () => {
 
     return (
         <div className="header">
