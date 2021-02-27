@@ -12,10 +12,10 @@ export const User: React.FC<IUserProps> = ({user}) => {
             placeholder: 'Name:',
             name: user?.name
         },
-        {
-            placeholder: 'Status:',
-            name: user?.status
-        },
+        // {
+        //     placeholder: 'Status:',
+        //     name: user?.status
+        // },
         {
             placeholder: 'Species:',
             name: user?.species
@@ -24,10 +24,10 @@ export const User: React.FC<IUserProps> = ({user}) => {
             placeholder: 'Type: ',
             name: user?.type ? user?.type : 'Not specified'
         },
-        {
-            placeholder: user?.origin.name,
-            name: user?.origin.url
-        },
+        // {
+        //     placeholder: user?.origin.name,
+        //     name: user?.origin.url
+        // },
         {
             placeholder: 'Created at: ',
             name: user?.created
@@ -37,8 +37,9 @@ export const User: React.FC<IUserProps> = ({user}) => {
             name: user?.gender
         },
         {
-            placeholder: user?.location.name,
-            name: user?.location.url
+            placeholder: 'Location: ',
+            name: user?.location.name
+            // name: user?.location.url
         },
         {
             placeholder: 'Url: ',
@@ -56,7 +57,7 @@ export const User: React.FC<IUserProps> = ({user}) => {
                         <div className="user__section-value">{section.name}</div>
                     </div>
                 ))}
-                <Link to={'/' + user?.id}>Click me</Link>
+                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
             </div>
         </div>
     );

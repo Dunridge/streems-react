@@ -38,7 +38,8 @@
 .user {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 740px;
+  height: 260px;
   align-items: center;
   background-color: $user-color;
   border-radius: 20px;
@@ -52,10 +53,25 @@
 
   &__info {
     width: $description-width;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   &__info-section {
     display: flex;
+  }
+
+  &__button {
+    margin-top: 40px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: $secondary-color;
+    text-decoration: none;
+    width: 100px;
+    display: flex;
+    justify-content: center;
   }
 
   margin: $user-card-margin 0;
