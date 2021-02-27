@@ -129,4 +129,8 @@
   &:last-child {
     margin-bottom: 30px;
   }
+
+  &__info-section {
+    display: flex;
+  }
 }
