@@ -1,4 +1,4 @@
 
 export interface IEpisodeURL {
-    name?: string;
+    text?: string;
 }
