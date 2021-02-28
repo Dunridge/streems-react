@@ -7,7 +7,7 @@ import {IEpisodeSection} from '../interfaces/IEpisodeSection';
 export const Episode: React.FC<IEpisodeProps> = ({episode}) => {
     const [episodeInfo, setEpisodeInfo] = useState<IEpisode>({
         air_date: '',
-        characters: [],
+        characters: [], // TODO: redirect to a link where you're going to load more characters + remove from the interface
         created: '',
         episode: '',
         id: 0,
@@ -19,6 +19,7 @@ export const Episode: React.FC<IEpisodeProps> = ({episode}) => {
         //@ts-ignore
         axios.get(episode.text).then(response => {
             setEpisodeInfo(response.data);
+            console.log(response.data);
         })
     });
 
