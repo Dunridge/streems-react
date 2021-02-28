@@ -63,25 +63,21 @@
 
   &__info {
     width: $description-width;
+    margin: 0 14px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-  }
-
-  &__info-section {
-    display: flex;
-  }
-
-  &__button {
-    margin-top: 40px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: $secondary-color;
-    text-decoration: none;
-    width: 100px;
-    display: flex;
     justify-content: center;
+
+    &-section {
+      display: flex;
+      margin: 6px 0;
+    }
+  }
+
+  &__section-placeholder {
+    margin-right: 4px;
+    color: $placeholder-color;
   }
 
   margin: $user-card-margin 0;
@@ -142,5 +138,25 @@
 
   &__info-section {
     display: flex;
+  }
+}
+
+.button {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px 50px;
+  box-sizing: border-box;
+  background-color: $secondary-color;
+  color: $body-color;
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &--text {
+    text-decoration: none;
   }
 }

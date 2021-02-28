@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {IUser} from '../interfaces/IUser';
 import {User} from './User';
-import axios from 'axios';
 import InfiniteScroll from 'react-infinite-scroller';
 import {SearchBar} from './SearchBar';
 
@@ -52,7 +51,7 @@ export const Users: React.FC<UsersProps> = () => {
                 loadMore={loadFunc}
                 hasMore={true}
             >
-                {users.map(user => <User key={user.id} user={user}/>)}
+                {users.map(user => <User key={user.id} user={user} showLink={true}/>)}
             </InfiniteScroll>
         </React.Fragment>
     );

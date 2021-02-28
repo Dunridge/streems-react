@@ -25,10 +25,9 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
 
     }
 
-    // TODO: pass a boolean that will hide the Click me button + style it
     return (
         <div className="details">
-            <User user={user}/>
+            <User user={user} showLink={false}/>
             <div className="details__locations">Locations</div>
             <Location location={user?.location}/>
             <div className="details__episodes">Episodes</div>
@@ -36,7 +35,6 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
                 pageStart={0}
                 loadMore={loadFunc}
                 hasMore={true}
-                loader={<div className="loader" key={0}>Loading...</div>}
             >
                 {userEpisodes?.map((episode) => <Episode episode={episode}/>)}
             </InfiniteScroll>

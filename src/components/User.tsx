@@ -3,19 +3,12 @@ import {IUserProps} from '../interfaces/IUserProps';
 import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
-export const User: React.FC<IUserProps> = ({user}) => {
-    // console.log(user);
-
-    // TODO: configure these
+export const User: React.FC<IUserProps> = ({user, showLink}) => {
     const sections: IUserSection[] = [
         {
             placeholder: 'Name:',
             name: user?.name
         },
-        // {
-        //     placeholder: 'Status:',
-        //     name: user?.status
-        // },
         {
             placeholder: 'Species:',
             name: user?.species
@@ -24,10 +17,6 @@ export const User: React.FC<IUserProps> = ({user}) => {
             placeholder: 'Type: ',
             name: user?.type ? user?.type : 'Not specified'
         },
-        // {
-        //     placeholder: user?.origin.name,
-        //     name: user?.origin.url
-        // },
         {
             placeholder: 'Created at: ',
             name: user?.created
@@ -39,11 +28,6 @@ export const User: React.FC<IUserProps> = ({user}) => {
         {
             placeholder: 'Location: ',
             name: user?.location.name
-            // name: user?.location.url
-        },
-        {
-            placeholder: 'Url: ',
-            name: user?.url
         }
     ];
 
@@ -57,8 +41,8 @@ export const User: React.FC<IUserProps> = ({user}) => {
                         <div className="user__section-value">{section.name}</div>
                     </div>
                 ))}
-                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
             </div>
+            {showLink ? <Link className="button" to={'/' + user?.id}>Info</Link> :  null }
         </div>
     );
 }
