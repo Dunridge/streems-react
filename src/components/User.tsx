@@ -24,10 +24,6 @@ export const User: React.FC<IUserProps> = ({user}) => {
             placeholder: 'Type: ',
             name: user?.type ? user?.type : 'Not specified'
         },
-        // {
-        //     placeholder: user?.origin.name,
-        //     name: user?.origin.url
-        // },
         {
             placeholder: 'Created at: ',
             name: user?.created
@@ -39,11 +35,6 @@ export const User: React.FC<IUserProps> = ({user}) => {
         {
             placeholder: 'Location: ',
             name: user?.location.name
-            // name: user?.location.url
-        },
-        {
-            placeholder: 'Url: ',
-            name: user?.url
         }
     ];
 
@@ -57,8 +48,8 @@ export const User: React.FC<IUserProps> = ({user}) => {
                         <div className="user__section-value">{section.name}</div>
                     </div>
                 ))}
-                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
             </div>
+                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
         </div>
     );
 }
