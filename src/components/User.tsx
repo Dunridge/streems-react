@@ -4,18 +4,11 @@ import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
 export const User: React.FC<IUserProps> = ({user}) => {
-    // console.log(user);
-
-    // TODO: configure these
     const sections: IUserSection[] = [
         {
             placeholder: 'Name:',
             name: user?.name
         },
-        // {
-        //     placeholder: 'Status:',
-        //     name: user?.status
-        // },
         {
             placeholder: 'Species:',
             name: user?.species
@@ -49,7 +42,7 @@ export const User: React.FC<IUserProps> = ({user}) => {
                     </div>
                 ))}
             </div>
-                <span className="user__button"><Link to={'/' + user?.id}>Info</Link></span>
+            <Link className="button" to={'/' + user?.id}>Info</Link>
         </div>
     );
 }

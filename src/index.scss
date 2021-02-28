@@ -80,17 +80,6 @@
     color: $placeholder-color;
   }
 
-  &__button {
-    margin-top: 40px;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: $secondary-color;
-    text-decoration: none;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-  }
-
   margin: $user-card-margin 0;
 }
 
@@ -149,5 +138,25 @@
 
   &__info-section {
     display: flex;
+  }
+}
+
+.button {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  border-radius: 20px;
+  height: 40px;
+  padding: 10px 50px;
+  box-sizing: border-box;
+  background-color: $secondary-color;
+  color: $body-color;
+  display: grid;
+  place-items: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &--text {
+    text-decoration: none;
   }
 }
