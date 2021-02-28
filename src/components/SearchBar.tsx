@@ -12,7 +12,7 @@ export const SearchBar: React.FC<ISearchBarProps> = ({keyword,setKeyword}) => {
             style={BarStyling}
             key="random1"
             value={keyword}
-            placeholder={"search country"}
+            placeholder={"search by name"}
             onChange={(e) => setKeyword(e.target.value)}
         />
     );

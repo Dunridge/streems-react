@@ -21,6 +21,16 @@
   }
 }
 
+.searchbar {
+  margin: 20px 0;
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  background-color: $user-color;
+  border-radius: 20px;
+  padding: 20px 40px;
+}
+
 .header {
   height: $header-height;
   color: $c-gold;

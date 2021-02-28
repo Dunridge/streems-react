@@ -41,15 +41,16 @@ export const Users: React.FC<UsersProps> = () => {
 
     return (
         <React.Fragment>
-            <SearchBar
-               keyword={input}
-               setKeyword={updateInput}
-            />
+            <div className="searchbar">
+                <SearchBar
+                    keyword={input}
+                    setKeyword={updateInput}
+                />
+            </div>
             <InfiniteScroll
                 pageStart={0}
                 loadMore={loadFunc}
                 hasMore={true}
-                loader={<div className="loader" key={0}>Loading...</div>}
             >
                 {users.map(user => <User key={user.id} user={user}/>)}
             </InfiniteScroll>

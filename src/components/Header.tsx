@@ -13,11 +13,11 @@ export const Header: React.FC = () => {
             <Link to='/' style={{ textDecoration: 'none' }}>
                 <div className="header__title">Streems test</div>
             </Link>
-            <SearchField placeholder="Search..."
-                         onChange={onChange}
-                         searchText="Find characters..."
-                         classNames="header__search-field"
-            />
+            {/*<SearchField placeholder="Search..."*/}
+            {/*             onChange={onChange}*/}
+            {/*             searchText="Find characters..."*/}
+            {/*             classNames="header__search-field"*/}
+            {/*/>*/}
         </div>
     );
 }
