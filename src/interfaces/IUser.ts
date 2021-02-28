@@ -1,6 +1,5 @@
 import {IOrigin} from './IOrigin';
 import {ILocation} from './ILocation';
-import {IEpisodeURL} from './IEpisodeURL';
 
 export interface IUser {
     id: number;
@@ -15,4 +14,5 @@ export interface IUser {
     image: string;
     location: ILocation;
     url: string;
+    showLink?: boolean;
 }

@@ -19,7 +19,6 @@ export const Episode: React.FC<IEpisodeProps> = ({episode}) => {
         //@ts-ignore
         axios.get(episode.text).then(response => {
             setEpisodeInfo(response.data);
-            console.log(response.data);
         })
     });
 

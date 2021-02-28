@@ -3,7 +3,7 @@ import {IUserProps} from '../interfaces/IUserProps';
 import {IUserSection} from '../interfaces/IUserSection';
 import {Link} from 'react-router-dom';
 
-export const User: React.FC<IUserProps> = ({user}) => {
+export const User: React.FC<IUserProps> = ({user, showLink}) => {
     const sections: IUserSection[] = [
         {
             placeholder: 'Name:',
@@ -42,7 +42,7 @@ export const User: React.FC<IUserProps> = ({user}) => {
                     </div>
                 ))}
             </div>
-            <Link className="button" to={'/' + user?.id}>Info</Link>
+            {showLink ? <Link className="button" to={'/' + user?.id}>Info</Link> :  null }
         </div>
     );
 }
