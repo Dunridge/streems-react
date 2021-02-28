@@ -4,8 +4,8 @@ import SearchField from 'react-search-field';
 
 export const Header: React.FC = () => {
 
-    const onChange = () => {
-
+    const onChange = (value: any) => {
+        console.log(value); // TODO: and here try to filter by names
     }
 
     return (
