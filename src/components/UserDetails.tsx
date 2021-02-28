@@ -6,6 +6,7 @@ import {Location} from '../components/Location';
 import {Episode} from '../components/Episode';
 import {IUserDetailsProps} from '../interfaces/IUserDetailsProps';
 import {IEpisodeURL} from '../interfaces/IEpisodeURL';
+import InfiniteScroll from 'react-infinite-scroller';
 
 export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProps) => {
     const [users, setUsers] = useState<IUser[]>([]);
@@ -17,9 +18,12 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
     }, []);
     const user = users.find(user => user.id.toString() === props.match.params.id);
     const userEpisodes: IEpisodeURL[] | undefined = user?.episode?.map(url => {
-        return { text: url } as IEpisodeURL;
+        return {text: url} as IEpisodeURL;
     });
-    // console.log(userEpisodes);
+
+    const loadFunc = () => {
+
+    }
 
     // TODO: pass a boolean that will hide the Click me button + style it
     return (
@@ -28,7 +32,14 @@ export const UserDetails: React.FC<IUserDetailsProps> = (props: IUserDetailsProp
             <div className="details__locations">Locations</div>
             <Location location={user?.location}/>
             <div className="details__episodes">Episodes</div>
-            {userEpisodes?.map((episode) => <Episode episode={episode}/>)}
+            <InfiniteScroll
+                pageStart={0}
+                loadMore={loadFunc}
+                hasMore={true}
+                loader={<div className="loader" key={0}>Loading...</div>}
+            >
+                {userEpisodes?.map((episode) => <Episode episode={episode}/>)}
+            </InfiniteScroll>
         </div>
     );
 }
